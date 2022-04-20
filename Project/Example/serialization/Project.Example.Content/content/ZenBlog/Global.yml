@@ -1,0 +1,18 @@
+﻿---
+ID: "5fd00a18-337a-4dfd-9f66-db3b776184a5"
+Parent: "b7b0e0b3-0349-4786-a8e0-64b428a9d98b"
+Template: "c2420641-cf8b-4197-8283-15734c4aea6c"
+Path: /sitecore/content/ZenBlog/Global
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: network/16x16/earth.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20220404T103613Z

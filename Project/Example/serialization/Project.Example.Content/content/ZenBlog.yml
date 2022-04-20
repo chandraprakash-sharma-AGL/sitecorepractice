@@ -1,0 +1,18 @@
+﻿---
+ID: "b7b0e0b3-0349-4786-a8e0-64b428a9d98b"
+Parent: "0de95ae4-41ab-4d01-9eb0-67441b7c2450"
+Template: "c2420641-cf8b-4197-8283-15734c4aea6c"
+Path: /sitecore/content/ZenBlog
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: network/16x16/environment.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20220404T103529Z

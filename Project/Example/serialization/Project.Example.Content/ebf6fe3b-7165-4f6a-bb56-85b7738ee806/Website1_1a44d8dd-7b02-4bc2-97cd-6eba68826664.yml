@@ -1,0 +1,18 @@
+﻿---
+ID: "1a44d8dd-7b02-4bc2-97cd-6eba68826664"
+Parent: "ebf6fe3b-7165-4f6a-bb56-85b7738ee806"
+Template: "c2420641-cf8b-4197-8283-15734c4aea6c"
+Path: /sitecore/content/Website1/Website1
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Network/16x16/environment.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20220315T061523Z

@@ -1,0 +1,45 @@
+﻿---
+ID: "133fa4f4-caff-4289-8950-4013fc84fbef"
+Parent: "3b28e350-385a-40b4-a9c6-57454d9f81ce"
+Template: "250b8620-3da4-44d7-9955-091c92554e48"
+Path: /sitecore/content/AllSites/NexaWeb/Data/NexaWebCarModel/XL6
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: apps/32x32/car.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0bf69ed9-68c9-4a64-a67c-8d208e423106"
+      Hint: CarModelName
+      Value: XL6
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211223T081235Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "60f130c6-411b-49dc-bfeb-f957fb1a8bae"
+      Hint: BookingAmount
+      Value: 11000
+    - ID: "9c64877f-98af-4964-99b5-3345f7dab81b"
+      Hint: CarVariantList
+      Type: Treelist
+      Value: |
+        {D2D0B756-B4A4-41C7-91B6-6C1232CD0157}
+        {DD9A089A-62CB-4ED6-B12A-013B602159D6}
+    - ID: "b62eac05-b6f3-4817-a48b-5365b9823a81"
+      Hint: CarImage
+      Value: |
+        <image mediaid="{F479D5B2-7E28-42F9-8B83-C1E724597A72}" />
+    - ID: "b8e5c93a-8ebb-4aa8-a873-41b5df5fb37c"
+      Hint: CarLogoImage
+      Value: |
+        <image mediaid="{E70B1486-A027-4B02-B545-BA87155BD7EE}" />
+    - ID: "bc064229-5c45-4147-b541-910f5aa6a4a4"
+      Hint: CarModelCode
+      Value: XL

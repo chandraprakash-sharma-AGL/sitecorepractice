@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1525
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{0F49591E-2658-4EDF-AE3B-BCF75B3FC9F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{CFD4CB3E-AFDD-4088-8D62-9F6A34A7E125}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{57291E97-1233-44A2-9549-D705EB09D39F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{3E7B51EA-90CF-4EE8-8C17-23974017F51D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{4825F80C-77AE-4A50-84C5-A4B877E27938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Serialization", "Foundation\Serialization\code\Sitecore.Foundation.Serialization.csproj", "{05E42709-89AA-4F89-9817-46D900746C27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{B03D637B-EE19-4A51-AB18-B3921429D9B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Project.Example", "Project\Example\code\Sitecore.Project.Example.csproj", "{97F6DDC6-E85D-4159-9E38-EB7BD1734D92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.MultiTenant", "Foundation\MultiTenant\code\Sitecore.Foundation.MultiTenant.csproj", "{D4333886-57EE-4B69-8C3B-8B7F1054E3F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.API", "Foundation\API\code\Sitecore.Foundation.API.csproj", "{E9BB3008-C450-4E52-964C-046C9014B615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeDataAccess", "Foundation\EmployeeDataAccess\EmployeeDataAccess.csproj", "{E51C4F36-874B-4C11-8A19-DD64A70419C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexaDataAccess", "NexaDataAccess\NexaDataAccess.csproj", "{72FC4598-3260-4D4F-B9A0-089379B4394E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.NexaWeb", "Feature\NexaWeb\code\Sitecore.Feature.NexaWeb.csproj", "{88A67254-4C51-40E3-8688-1D02191FB495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Project.Website1", "Project\Website1\code\Sitecore.Project.Website1\Sitecore.Project.Website1.csproj", "{E3D1D5AE-F36E-41C2-A488-782786B2BFBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Website1", "Feature\Website1\code\Sitecore.Feature.Website1.csproj", "{2EA4D2E5-6EDB-4AF8-BD15-4CAF30D7BF3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05E42709-89AA-4F89-9817-46D900746C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05E42709-89AA-4F89-9817-46D900746C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05E42709-89AA-4F89-9817-46D900746C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05E42709-89AA-4F89-9817-46D900746C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97F6DDC6-E85D-4159-9E38-EB7BD1734D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F6DDC6-E85D-4159-9E38-EB7BD1734D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F6DDC6-E85D-4159-9E38-EB7BD1734D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F6DDC6-E85D-4159-9E38-EB7BD1734D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4333886-57EE-4B69-8C3B-8B7F1054E3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4333886-57EE-4B69-8C3B-8B7F1054E3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4333886-57EE-4B69-8C3B-8B7F1054E3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4333886-57EE-4B69-8C3B-8B7F1054E3F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9BB3008-C450-4E52-964C-046C9014B615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9BB3008-C450-4E52-964C-046C9014B615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9BB3008-C450-4E52-964C-046C9014B615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9BB3008-C450-4E52-964C-046C9014B615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51C4F36-874B-4C11-8A19-DD64A70419C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51C4F36-874B-4C11-8A19-DD64A70419C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51C4F36-874B-4C11-8A19-DD64A70419C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51C4F36-874B-4C11-8A19-DD64A70419C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72FC4598-3260-4D4F-B9A0-089379B4394E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72FC4598-3260-4D4F-B9A0-089379B4394E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72FC4598-3260-4D4F-B9A0-089379B4394E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72FC4598-3260-4D4F-B9A0-089379B4394E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88A67254-4C51-40E3-8688-1D02191FB495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A67254-4C51-40E3-8688-1D02191FB495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A67254-4C51-40E3-8688-1D02191FB495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A67254-4C51-40E3-8688-1D02191FB495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3D1D5AE-F36E-41C2-A488-782786B2BFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3D1D5AE-F36E-41C2-A488-782786B2BFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3D1D5AE-F36E-41C2-A488-782786B2BFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3D1D5AE-F36E-41C2-A488-782786B2BFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA4D2E5-6EDB-4AF8-BD15-4CAF30D7BF3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA4D2E5-6EDB-4AF8-BD15-4CAF30D7BF3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA4D2E5-6EDB-4AF8-BD15-4CAF30D7BF3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA4D2E5-6EDB-4AF8-BD15-4CAF30D7BF3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4825F80C-77AE-4A50-84C5-A4B877E27938} = {CFD4CB3E-AFDD-4088-8D62-9F6A34A7E125}
+		{05E42709-89AA-4F89-9817-46D900746C27} = {4825F80C-77AE-4A50-84C5-A4B877E27938}
+		{B03D637B-EE19-4A51-AB18-B3921429D9B9} = {3E7B51EA-90CF-4EE8-8C17-23974017F51D}
+		{97F6DDC6-E85D-4159-9E38-EB7BD1734D92} = {B03D637B-EE19-4A51-AB18-B3921429D9B9}
+		{D4333886-57EE-4B69-8C3B-8B7F1054E3F3} = {CFD4CB3E-AFDD-4088-8D62-9F6A34A7E125}
+		{E9BB3008-C450-4E52-964C-046C9014B615} = {CFD4CB3E-AFDD-4088-8D62-9F6A34A7E125}
+		{E51C4F36-874B-4C11-8A19-DD64A70419C2} = {CFD4CB3E-AFDD-4088-8D62-9F6A34A7E125}
+		{72FC4598-3260-4D4F-B9A0-089379B4394E} = {CFD4CB3E-AFDD-4088-8D62-9F6A34A7E125}
+		{88A67254-4C51-40E3-8688-1D02191FB495} = {57291E97-1233-44A2-9549-D705EB09D39F}
+		{E3D1D5AE-F36E-41C2-A488-782786B2BFBD} = {3E7B51EA-90CF-4EE8-8C17-23974017F51D}
+		{2EA4D2E5-6EDB-4AF8-BD15-4CAF30D7BF3C} = {57291E97-1233-44A2-9549-D705EB09D39F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D79A9978-860A-4B9D-BAB0-B141E7E9B3A9}
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Caching.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.ServiceBus.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.WindowsAzure.Storage.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.TransientFaultHandling.Configuration.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

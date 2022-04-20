@@ -1,0 +1,21 @@
+﻿---
+ID: "952fd264-1f05-4359-9489-1d1a5f532f67"
+Parent: "cfe272cf-2ff0-4884-bf5b-ff96bfea60c7"
+Template: "cfe272cf-2ff0-4884-bf5b-ff96bfea60c7"
+Path: /sitecore/templates/Project/Example/Page Type Templates/Article/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211022T122208Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "bcd5e6f4-d819-4d8c-9708-870b33017618"
+      Hint: ArticleTitle
+      Value: $name

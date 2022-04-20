@@ -1,0 +1,37 @@
+﻿@using Sitecore.ExperienceForms.Mvc.Html
+@model Sitecore.Feature.NexaWeb.Models.CustomModel.CustomDropDownListViewModel
+<div class="universalcustomselectlist">
+    <label for="@Html.IdFor(m => Model.Value)"
+           class="@Model.LabelCssClass">
+        @Html.DisplayTextFor(t => Model.Title)
+    </label>
+    <select id="@Html.IdFor(m => Model.Value)" 
+            name="@Html.NameFor(m => Model.Value)" 
+            class="@Model.CssClass universalcustomselectlist-ddn" 
+            data-sc-tracking="@Model.IsTrackingEnabled" 
+            data-sc-field-name="@Model.Name"
+            data-sc-text="@Model.CustomeDropDownListTextField"
+            data-sc-value="@Model.CustomeDropDownListValueField"
+            @Html.GenerateUnobtrusiveValidationAttributes(m => m.Value)>
+        @if (Model.ShowEmptyItem)
+        {
+            <option label=" "></option>
+        }@foreach (var item in Model.Items)
+        {
+            <option value="@item.Value" selected="@item.Selected">@item.Text</option>
+        }
+    </select>
+    @Html.ValidationMessageFor(m => Model.Value)
+    @*<div class="child-ddl">
+        <label for="@Html.IdFor(m=>Model.CustomeDropDownListFieldName)"
+               class="@Model.LabelCssClass">
+            @Html.DisplayTextFor(t=>Model.CustomeDropDownListLabel)
+        </label>
+        <select id="@Html.IdFor(m=>Model.CustomeDropDownListFieldName)"
+                name="@Html.NameFor(m=>Model.CustomeDropDownListFieldName)"
+                class="universalcustomselectlist-child-ddl"
+                data-sc-tracking="@Model.IsTrackingEnabled"
+                data-sc-field-name="@Model.CustomeDropDownListFieldName">
+        </select>
+    </div>*@
+</div>

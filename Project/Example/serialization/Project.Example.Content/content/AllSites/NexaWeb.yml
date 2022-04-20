@@ -1,0 +1,14 @@
+﻿---
+ID: "3ad74bfb-65b5-4139-8836-eeecd4287fe5"
+Parent: "4c9d2754-a6d6-4da9-be1e-830bb091ca67"
+Template: "b3c1e1ec-319e-4465-8daa-922d0e15042a"
+Path: /sitecore/content/AllSites/NexaWeb
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211222T115139Z

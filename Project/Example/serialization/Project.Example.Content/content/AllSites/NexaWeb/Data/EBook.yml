@@ -1,0 +1,27 @@
+﻿---
+ID: "78adbd99-b6db-4962-ad61-1160c2cacae1"
+Parent: "00f1a530-a6b1-423a-9236-38ef0359750c"
+Template: "f5a6ea3f-f731-4171-982a-89c25a72f49e"
+Path: /sitecore/content/AllSites/NexaWeb/Data/EBook
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211224T121203Z
+    - ID: "3738d07a-513e-467c-b31b-4919b21ec908"
+      Hint: CarList
+      Type: Treelist
+      Value: |
+        {50138942-E5E0-4FA4-B074-B0420C2620A1}
+        {DEED4499-4F14-4EA5-80EF-32B5C34FC4FB}
+        {B5CEABC7-F63D-401A-B4CA-C43168645BB8}
+        {CE979BD7-0396-40A6-991A-A0CFE2AE7D30}
+        {133FA4F4-CAFF-4289-8950-4013FC84FBEF}
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
