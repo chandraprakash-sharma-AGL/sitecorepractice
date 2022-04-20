@@ -1,0 +1,26 @@
+﻿@using Sitecore.Feature.NexaWeb.Models
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@model CommentsModel
+
+<div class="container">
+    @using(@Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post, new { @class = "form" }))
+    {
+        <div class="form-group">
+            @Html.LabelFor(x=>x.Name)
+            @Html.TextBoxFor(x=>x.Name,new { @class = "form-control"})
+            @Html.ValidationMessageFor(x=>x.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Email)
+            @Html.TextBoxFor(x => x.Email)
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.CommentText)
+            @Html.TextAreaFor(x => x.Email)
+            @Html.ValidationMessageFor(x => x.CommentText)
+        </div>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    }
+</div>

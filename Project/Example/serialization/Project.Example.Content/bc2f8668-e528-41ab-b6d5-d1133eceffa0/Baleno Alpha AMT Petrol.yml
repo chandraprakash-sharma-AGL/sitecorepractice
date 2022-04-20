@@ -1,0 +1,24 @@
+﻿---
+ID: "2d5a9fab-052f-4cd1-8f09-976ebe940bea"
+Parent: "bc2f8668-e528-41ab-b6d5-d1133eceffa0"
+Template: "b4914845-ae74-4689-a0b1-062283b374e8"
+Path: /sitecore/content/AllSites/NexaWeb/Data/NexaWeb Car Variant/Baleno Variant/Baleno Alpha AMT Petrol
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211223T101619Z
+    - ID: "3efcbbb1-7a35-4772-b7b4-fee3654dcd0c"
+      Hint: CarVariantName
+      Value: Alpha AMT Petrol
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "9e820e40-e3ed-4c47-aadd-3e05fe2832ef"
+      Hint: CarVariantCode
+      Value: BAA4CZ200

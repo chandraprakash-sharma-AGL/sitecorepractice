@@ -1,0 +1,22 @@
+﻿---
+ID: "4ec744f5-4330-4577-a370-0e6aceb5643e"
+Parent: "00f1a530-a6b1-423a-9236-38ef0359750c"
+Template: "c0fdf735-c102-4a49-87df-02600b80e732"
+Path: /sitecore/content/AllSites/NexaWeb/Data/NexaWebCarVariantColor
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: applications/32x32/folder_blue.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20220110T063333Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

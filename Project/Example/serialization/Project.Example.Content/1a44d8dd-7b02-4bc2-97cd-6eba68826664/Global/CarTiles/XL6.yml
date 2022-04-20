@@ -1,0 +1,28 @@
+﻿---
+ID: "66ba2b30-c1c0-4c34-b768-274d00bc9a4a"
+Parent: "ab56bb46-2064-4e61-bd29-b81e6cd3cdd3"
+Template: "ccc25954-9628-4f05-9243-30c544cdd143"
+Path: /sitecore/content/Website1/Website1/Global/CarTiles/XL6
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20220315T093223Z
+    - ID: "46df77c4-4224-4150-9bf3-6a6f5c09200c"
+      Hint: CarBrandLogo
+      Value: |
+        <image mediaid="{E70B1486-A027-4B02-B545-BA87155BD7EE}" />
+    - ID: "4b07659b-7e30-4ab1-a34d-458aad44852d"
+      Hint: CarName
+      Value: XL6
+    - ID: "c4fd1477-38cf-49fe-862b-4ad360f5fe2a"
+      Hint: CarImage
+      Value: |
+        <image mediaid="{F479D5B2-7E28-42F9-8B83-C1E724597A72}" />
+    - ID: "f8fa3dbe-f6ee-4468-b212-9836c8361964"
+      Hint: CarPrice
+      Value: 1014000

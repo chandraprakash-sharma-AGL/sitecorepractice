@@ -1,0 +1,14 @@
+﻿---
+ID: "3b28e350-385a-40b4-a9c6-57454d9f81ce"
+Parent: "00f1a530-a6b1-423a-9236-38ef0359750c"
+Template: "52ffbae9-68a3-4b59-a232-0348658b3424"
+Path: /sitecore/content/AllSites/NexaWeb/Data/NexaWebCarModel
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211223T080954Z

@@ -1,0 +1,56 @@
+﻿---
+ID: "b4315419-5901-44f9-bde6-339ad5f17c18"
+Parent: "cbeffd1e-1eb8-463e-8cc2-5620b933ccae"
+Template: "aeafbdf8-c651-43a7-8a97-8b13f8e60cbc"
+Path: /sitecore/content/AllSites/NexaWeb/Nexa/Home
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Business/16x16/note.png
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{DDB9018D-38F5-4717-B519-67F235D5E597}">
+        <r
+          ds="{78ADBD99-B6DB-4962-AD61-1160C2CACAE1}"
+          id="{05DF03F9-DB36-4CC2-9CB5-075C2B9AE433}"
+          par=""
+          ph="main1"
+          uid="{F3430510-CBF0-447F-9112-27B883CE40A3}" />
+        <r
+          ds="{6D115254-8378-4A64-B09F-8B1AE557ED95}"
+          id="{6B5B0FE6-5C85-4487-BA7E-F8C2ECC186A8}"
+          par=""
+          ph="main2"
+          uid="{449A2077-0452-408F-9D45-0216404271CB}" />
+        <r
+          ds="{A3785CA5-8E52-4B3E-8936-8F50A371960F}"
+          id="{6B5B0FE6-5C85-4487-BA7E-F8C2ECC186A8}"
+          par=""
+          ph="main"
+          uid="{4D46D65A-56FC-4CA8-BA52-C78BAB5B3800}" />
+        <r
+          ds=""
+          id="{7BE37320-2863-416E-B9A9-8E19466668F0}"
+          par=""
+          ph="main1"
+          uid="{260F53C1-18E8-4730-9B12-E3C2C4EEE5BE}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Home
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211222T120727Z

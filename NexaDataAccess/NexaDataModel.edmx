@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NexaDataDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'nexa_TestDB.dbo.AllCities' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AllCities">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="cityName" />
+            <PropertyRef Name="cityCode" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cityName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="cityCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="stateCode" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="allStates">
+          <Key>
+            <PropertyRef Name="stateCode" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stateName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="stateCode" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nexaCarColor">
+          <Key>
+            <PropertyRef Name="colorCode" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="colorName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="colorCode" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nexaCarModel">
+          <Key>
+            <PropertyRef Name="ModelCode" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModelName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ModelCode" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nexaCarPrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VarientCode" Type="varchar" MaxLength="255" />
+          <Property Name="ColorCode" Type="varchar" MaxLength="255" />
+          <Property Name="cityCode" Type="varchar" MaxLength="255" />
+          <Property Name="CarPrice" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="nexaCarVarient">
+          <Key>
+            <PropertyRef Name="VarientCode" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VarientName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="VarientCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ModelCode" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="nexaVarientColor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VarientCode" Type="varchar" MaxLength="255" />
+          <Property Name="ColorCode" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__AllCities__state__36B12243">
+          <End Role="allStates" Type="Self.allStates" Multiplicity="0..1" />
+          <End Role="AllCities" Type="Self.AllCities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="allStates">
+              <PropertyRef Name="stateCode" />
+            </Principal>
+            <Dependent Role="AllCities">
+              <PropertyRef Name="stateCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK__nexaCarPr__cityC__3B75D760' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK__nexaCarPr__cityC__3B75D760" />-->
+        <Association Name="FK__nexaCarPr__Color__3A81B327">
+          <End Role="nexaCarColor" Type="Self.nexaCarColor" Multiplicity="0..1" />
+          <End Role="nexaCarPrice" Type="Self.nexaCarPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarColor">
+              <PropertyRef Name="colorCode" />
+            </Principal>
+            <Dependent Role="nexaCarPrice">
+              <PropertyRef Name="ColorCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nexaCarPr__Varie__398D8EEE">
+          <End Role="nexaCarVarient" Type="Self.nexaCarVarient" Multiplicity="0..1" />
+          <End Role="nexaCarPrice" Type="Self.nexaCarPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarVarient">
+              <PropertyRef Name="VarientCode" />
+            </Principal>
+            <Dependent Role="nexaCarPrice">
+              <PropertyRef Name="VarientCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nexaCarVa__Model__286302EC">
+          <End Role="nexaCarModel" Type="Self.nexaCarModel" Multiplicity="0..1" />
+          <End Role="nexaCarVarient" Type="Self.nexaCarVarient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarModel">
+              <PropertyRef Name="ModelCode" />
+            </Principal>
+            <Dependent Role="nexaCarVarient">
+              <PropertyRef Name="ModelCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nexaVarie__Color__300424B4">
+          <End Role="nexaCarColor" Type="Self.nexaCarColor" Multiplicity="0..1" />
+          <End Role="nexaVarientColor" Type="Self.nexaVarientColor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarColor">
+              <PropertyRef Name="colorCode" />
+            </Principal>
+            <Dependent Role="nexaVarientColor">
+              <PropertyRef Name="ColorCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nexaVarie__Varie__2F10007B">
+          <End Role="nexaCarVarient" Type="Self.nexaCarVarient" Multiplicity="0..1" />
+          <End Role="nexaVarientColor" Type="Self.nexaVarientColor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarVarient">
+              <PropertyRef Name="VarientCode" />
+            </Principal>
+            <Dependent Role="nexaVarientColor">
+              <PropertyRef Name="VarientCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NexaDataDBModelStoreContainer">
+          <EntitySet Name="allStates" EntityType="Self.allStates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nexaCarColor" EntityType="Self.nexaCarColor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nexaCarModel" EntityType="Self.nexaCarModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nexaCarPrice" EntityType="Self.nexaCarPrice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nexaCarVarient" EntityType="Self.nexaCarVarient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nexaVarientColor" EntityType="Self.nexaVarientColor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AllCities" EntityType="Self.AllCities" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AllCities].[id] AS [id], 
+    [AllCities].[cityName] AS [cityName], 
+    [AllCities].[cityCode] AS [cityCode], 
+    [AllCities].[stateCode] AS [stateCode]
+    FROM [dbo].[AllCities] AS [AllCities]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__AllCities__state__36B12243" Association="Self.FK__AllCities__state__36B12243">
+            <End Role="allStates" EntitySet="allStates" />
+            <End Role="AllCities" EntitySet="AllCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaCarPr__Color__3A81B327" Association="Self.FK__nexaCarPr__Color__3A81B327">
+            <End Role="nexaCarColor" EntitySet="nexaCarColor" />
+            <End Role="nexaCarPrice" EntitySet="nexaCarPrice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaCarPr__Varie__398D8EEE" Association="Self.FK__nexaCarPr__Varie__398D8EEE">
+            <End Role="nexaCarVarient" EntitySet="nexaCarVarient" />
+            <End Role="nexaCarPrice" EntitySet="nexaCarPrice" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaCarVa__Model__286302EC" Association="Self.FK__nexaCarVa__Model__286302EC">
+            <End Role="nexaCarModel" EntitySet="nexaCarModel" />
+            <End Role="nexaCarVarient" EntitySet="nexaCarVarient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaVarie__Color__300424B4" Association="Self.FK__nexaVarie__Color__300424B4">
+            <End Role="nexaCarColor" EntitySet="nexaCarColor" />
+            <End Role="nexaVarientColor" EntitySet="nexaVarientColor" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaVarie__Varie__2F10007B" Association="Self.FK__nexaVarie__Varie__2F10007B">
+            <End Role="nexaCarVarient" EntitySet="nexaCarVarient" />
+            <End Role="nexaVarientColor" EntitySet="nexaVarientColor" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NexaDataDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="allState">
+          <Key>
+            <PropertyRef Name="stateCode" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stateName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="stateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AllCities" Relationship="Self.FK__AllCities__state__36B12243" FromRole="allStates" ToRole="AllCities" />
+        </EntityType>
+        <EntityType Name="nexaCarColor">
+          <Key>
+            <PropertyRef Name="colorCode" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="colorName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="colorCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="nexaCarPrices" Relationship="Self.FK__nexaCarPr__Color__3A81B327" FromRole="nexaCarColor" ToRole="nexaCarPrice" />
+          <NavigationProperty Name="nexaVarientColors" Relationship="Self.FK__nexaVarie__Color__300424B4" FromRole="nexaCarColor" ToRole="nexaVarientColor" />
+        </EntityType>
+        <EntityType Name="nexaCarModel">
+          <Key>
+            <PropertyRef Name="ModelCode" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModelCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="nexaCarVarients" Relationship="Self.FK__nexaCarVa__Model__286302EC" FromRole="nexaCarModel" ToRole="nexaCarVarient" />
+        </EntityType>
+        <EntityType Name="nexaCarPrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VarientCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ColorCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="cityCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CarPrice" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="nexaCarColor" Relationship="Self.FK__nexaCarPr__Color__3A81B327" FromRole="nexaCarPrice" ToRole="nexaCarColor" />
+          <NavigationProperty Name="nexaCarVarient" Relationship="Self.FK__nexaCarPr__Varie__398D8EEE" FromRole="nexaCarPrice" ToRole="nexaCarVarient" />
+        </EntityType>
+        <EntityType Name="nexaCarVarient">
+          <Key>
+            <PropertyRef Name="VarientCode" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VarientName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VarientCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModelCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="nexaCarModel" Relationship="Self.FK__nexaCarVa__Model__286302EC" FromRole="nexaCarVarient" ToRole="nexaCarModel" />
+          <NavigationProperty Name="nexaCarPrices" Relationship="Self.FK__nexaCarPr__Varie__398D8EEE" FromRole="nexaCarVarient" ToRole="nexaCarPrice" />
+          <NavigationProperty Name="nexaVarientColors" Relationship="Self.FK__nexaVarie__Varie__2F10007B" FromRole="nexaCarVarient" ToRole="nexaVarientColor" />
+        </EntityType>
+        <EntityType Name="nexaVarientColor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VarientCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ColorCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="nexaCarColor" Relationship="Self.FK__nexaVarie__Color__300424B4" FromRole="nexaVarientColor" ToRole="nexaCarColor" />
+          <NavigationProperty Name="nexaCarVarient" Relationship="Self.FK__nexaVarie__Varie__2F10007B" FromRole="nexaVarientColor" ToRole="nexaCarVarient" />
+        </EntityType>
+        <EntityType Name="AllCity">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="cityName" />
+            <PropertyRef Name="cityCode" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cityName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cityCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="stateCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="allState" Relationship="Self.FK__AllCities__state__36B12243" FromRole="AllCities" ToRole="allStates" />
+        </EntityType>
+        <Association Name="FK__AllCities__state__36B12243">
+          <End Role="allStates" Type="Self.allState" Multiplicity="0..1" />
+          <End Role="AllCities" Type="Self.AllCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="allStates">
+              <PropertyRef Name="stateCode" />
+            </Principal>
+            <Dependent Role="AllCities">
+              <PropertyRef Name="stateCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nexaCarPr__Color__3A81B327">
+          <End Role="nexaCarColor" Type="Self.nexaCarColor" Multiplicity="0..1" />
+          <End Role="nexaCarPrice" Type="Self.nexaCarPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarColor">
+              <PropertyRef Name="colorCode" />
+            </Principal>
+            <Dependent Role="nexaCarPrice">
+              <PropertyRef Name="ColorCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nexaVarie__Color__300424B4">
+          <End Role="nexaCarColor" Type="Self.nexaCarColor" Multiplicity="0..1" />
+          <End Role="nexaVarientColor" Type="Self.nexaVarientColor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarColor">
+              <PropertyRef Name="colorCode" />
+            </Principal>
+            <Dependent Role="nexaVarientColor">
+              <PropertyRef Name="ColorCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nexaCarVa__Model__286302EC">
+          <End Role="nexaCarModel" Type="Self.nexaCarModel" Multiplicity="0..1" />
+          <End Role="nexaCarVarient" Type="Self.nexaCarVarient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarModel">
+              <PropertyRef Name="ModelCode" />
+            </Principal>
+            <Dependent Role="nexaCarVarient">
+              <PropertyRef Name="ModelCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nexaCarPr__Varie__398D8EEE">
+          <End Role="nexaCarVarient" Type="Self.nexaCarVarient" Multiplicity="0..1" />
+          <End Role="nexaCarPrice" Type="Self.nexaCarPrice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarVarient">
+              <PropertyRef Name="VarientCode" />
+            </Principal>
+            <Dependent Role="nexaCarPrice">
+              <PropertyRef Name="VarientCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nexaVarie__Varie__2F10007B">
+          <End Role="nexaCarVarient" Type="Self.nexaCarVarient" Multiplicity="0..1" />
+          <End Role="nexaVarientColor" Type="Self.nexaVarientColor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nexaCarVarient">
+              <PropertyRef Name="VarientCode" />
+            </Principal>
+            <Dependent Role="nexaVarientColor">
+              <PropertyRef Name="VarientCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NexaDataDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="allStates" EntityType="Self.allState" />
+          <EntitySet Name="nexaCarColors" EntityType="Self.nexaCarColor" />
+          <EntitySet Name="nexaCarModels" EntityType="Self.nexaCarModel" />
+          <EntitySet Name="nexaCarPrices" EntityType="Self.nexaCarPrice" />
+          <EntitySet Name="nexaCarVarients" EntityType="Self.nexaCarVarient" />
+          <EntitySet Name="nexaVarientColors" EntityType="Self.nexaVarientColor" />
+          <EntitySet Name="AllCities" EntityType="Self.AllCity" />
+          <AssociationSet Name="FK__AllCities__state__36B12243" Association="Self.FK__AllCities__state__36B12243">
+            <End Role="allStates" EntitySet="allStates" />
+            <End Role="AllCities" EntitySet="AllCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaCarPr__Color__3A81B327" Association="Self.FK__nexaCarPr__Color__3A81B327">
+            <End Role="nexaCarColor" EntitySet="nexaCarColors" />
+            <End Role="nexaCarPrice" EntitySet="nexaCarPrices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaVarie__Color__300424B4" Association="Self.FK__nexaVarie__Color__300424B4">
+            <End Role="nexaCarColor" EntitySet="nexaCarColors" />
+            <End Role="nexaVarientColor" EntitySet="nexaVarientColors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaCarVa__Model__286302EC" Association="Self.FK__nexaCarVa__Model__286302EC">
+            <End Role="nexaCarModel" EntitySet="nexaCarModels" />
+            <End Role="nexaCarVarient" EntitySet="nexaCarVarients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaCarPr__Varie__398D8EEE" Association="Self.FK__nexaCarPr__Varie__398D8EEE">
+            <End Role="nexaCarVarient" EntitySet="nexaCarVarients" />
+            <End Role="nexaCarPrice" EntitySet="nexaCarPrices" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nexaVarie__Varie__2F10007B" Association="Self.FK__nexaVarie__Varie__2F10007B">
+            <End Role="nexaCarVarient" EntitySet="nexaCarVarients" />
+            <End Role="nexaVarientColor" EntitySet="nexaVarientColors" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NexaDataDBModelStoreContainer" CdmEntityContainer="NexaDataDBEntities">
+          <EntitySetMapping Name="allStates">
+            <EntityTypeMapping TypeName="NexaDataDBModel.allState">
+              <MappingFragment StoreEntitySet="allStates">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="stateName" ColumnName="stateName" />
+                <ScalarProperty Name="stateCode" ColumnName="stateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nexaCarColors">
+            <EntityTypeMapping TypeName="NexaDataDBModel.nexaCarColor">
+              <MappingFragment StoreEntitySet="nexaCarColor">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="colorName" ColumnName="colorName" />
+                <ScalarProperty Name="colorCode" ColumnName="colorCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nexaCarModels">
+            <EntityTypeMapping TypeName="NexaDataDBModel.nexaCarModel">
+              <MappingFragment StoreEntitySet="nexaCarModel">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nexaCarPrices">
+            <EntityTypeMapping TypeName="NexaDataDBModel.nexaCarPrice">
+              <MappingFragment StoreEntitySet="nexaCarPrice">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="VarientCode" ColumnName="VarientCode" />
+                <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+                <ScalarProperty Name="cityCode" ColumnName="cityCode" />
+                <ScalarProperty Name="CarPrice" ColumnName="CarPrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nexaCarVarients">
+            <EntityTypeMapping TypeName="NexaDataDBModel.nexaCarVarient">
+              <MappingFragment StoreEntitySet="nexaCarVarient">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="VarientName" ColumnName="VarientName" />
+                <ScalarProperty Name="VarientCode" ColumnName="VarientCode" />
+                <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nexaVarientColors">
+            <EntityTypeMapping TypeName="NexaDataDBModel.nexaVarientColor">
+              <MappingFragment StoreEntitySet="nexaVarientColor">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="VarientCode" ColumnName="VarientCode" />
+                <ScalarProperty Name="ColorCode" ColumnName="ColorCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AllCities">
+            <EntityTypeMapping TypeName="NexaDataDBModel.AllCity">
+              <MappingFragment StoreEntitySet="AllCities">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="cityCode" ColumnName="cityCode" />
+                <ScalarProperty Name="stateCode" ColumnName="stateCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

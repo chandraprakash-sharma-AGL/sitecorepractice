@@ -1,0 +1,18 @@
+﻿---
+ID: "00f1a530-a6b1-423a-9236-38ef0359750c"
+Parent: "3ad74bfb-65b5-4139-8836-eeecd4287fe5"
+Template: "31e009e9-22f1-4f52-b8ce-789ed95c4880"
+Path: /sitecore/content/AllSites/NexaWeb/Data
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Network/16x16/earth.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211223T055922Z

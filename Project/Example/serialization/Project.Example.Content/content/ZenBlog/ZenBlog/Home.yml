@@ -1,0 +1,33 @@
+﻿---
+ID: "dd497e59-4ca6-4e6b-8592-7a696366a2f6"
+Parent: "b549e2e6-17ae-44d3-b12d-4560b5eafd90"
+Template: "8caf2675-a83f-468e-90c1-697ebd5a4b8e"
+Path: /sitecore/content/ZenBlog/ZenBlog/Home
+DB: master
+SharedFields:
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{5F3F9ADC-2A96-4CCF-A2C5-F5D42740E7F4}">
+        <r
+          id="{22A11284-14F9-46A6-B59A-9A0CC5DB404F}"
+          ph="Header"
+          uid="{81F58C5B-2085-45D7-B59A-40A36590CBA8}" />
+        <r
+          id="{DF6C88ED-77B9-4A6B-B3B8-A71A86B86AE7}"
+          ph="Footer"
+          uid="{DAB6F920-C60E-415A-BB49-8310F393A85A}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20220404T104139Z

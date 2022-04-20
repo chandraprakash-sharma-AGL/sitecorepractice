@@ -1,0 +1,14 @@
+﻿---
+ID: "4f5281a3-e286-4a24-985b-eb7732d17465"
+Parent: "be525f44-586b-4a6a-b3c1-1ae79c2b6cd0"
+Template: "52ffbae9-68a3-4b59-a232-0348658b3424"
+Path: /sitecore/content/AllSites/NexaWeb/Data/NexaWeb Car Variant/SCross Variant
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211223T082128Z

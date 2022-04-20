@@ -1,0 +1,18 @@
+﻿---
+ID: "ab56bb46-2064-4e61-bd29-b81e6cd3cdd3"
+Parent: "db50015b-36e6-463a-a9d2-d3790f6f61be"
+Template: "c2420641-cf8b-4197-8283-15734c4aea6c"
+Path: /sitecore/content/Website1/Website1/Global/CarTiles
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: applications/32x32/folder_cubes.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20220315T092930Z

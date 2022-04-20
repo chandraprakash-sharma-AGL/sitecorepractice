@@ -1,0 +1,21 @@
+﻿---
+ID: "6e1009f0-4e86-4084-9dd5-936c3b4cf220"
+Parent: "7c24d91c-d27b-4882-a96d-5ce24587c606"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
+Path: /sitecore/layout/Renderings/Feature/Blog/ArticleDisplay
+DB: master
+SharedFields:
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
+  Hint: Controller Action
+  Value: Display
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
+  Hint: Controller
+  Value: Sitecore.Feature.Blog.Controllers.ArticleController, Sitecore.Feature.Blog
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211022T122653Z

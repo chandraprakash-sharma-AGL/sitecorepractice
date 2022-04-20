@@ -1,0 +1,175 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+
+
+@*<label>Select State:</label>
+    @Html.DropDownList("stateCode", new SelectList(ViewBag.allStates, "stateCode", "stateName"))
+    <label>Select City:</label>
+    @Html.DropDownList("cityCode", new SelectList(ViewBag.allCities, "cityCode", "cityName"))*@
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <label for="carModelDropDown">Select You Model</label>
+            <select id="carModelDropDown" class="form-control">
+                <option value="Select">Select</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <label for="carVariantDropDown">Select You Variant</label>
+            <select id="carVariantDropDown" class="form-control">
+                <option value="Select">Select</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <label for="carColorDropDown">Select You Color</label>
+            <select id="carColorDropDown" class="form-control">
+                <option value="Select">Select</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <label for="stateDropDown">State</label>
+            <select id="stateDropDown" class="form-control">
+                <option value="Select">Select</option>
+            </select>
+        </div>
+        <div class="col-lg-6">
+            <label for="cityDropDown">City</label>
+            <select id="cityDropDown" class="form-control">
+                <option value="Select">Select City</option>
+            </select>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        //GetAllState ajax call
+        $.ajax({
+            url: "http://helixexample.local/api/sitecore/NexaWeb/GetAllStates",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                if (data.length > 0) {
+                    $('#stateDropDown').html('');
+                    let option = '';
+                    option += `<option value='Select'>Select</option>`;
+                    for (let i = 0; i < data.length; i++) {
+                        option += `<option value='${data[i].stateCode}'>${data[i].stateName}</option>`;
+                    }
+                    $('#stateDropDown').html(option);
+                }
+            },
+            error: function (error) {
+                alert(error);
+                console.log(error);
+            }
+        });
+
+        //GetCarModel ajax call
+        $.ajax({
+            url: "http://helixexample.local/api/sitecore/NexaWeb/GetAllCarModel",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                if (data.length > 0) {
+                    $('#carModelDropDown').html('');
+                    let option = '';
+                    option += `<option value='Select'>Select</option>`;
+                    for (let i = 0; i < data.length; i++) {
+                        option += `<option value='${data[i].ModelCode}'>${data[i].ModelName}</option>`;
+                    }
+                    $('#carModelDropDown').html(option);
+                }
+            },
+            error: function (error) {
+                alert(error);
+                console.log(error);
+            }
+        })
+    });
+    
+
+    //GetCitiesByStateName ajax call
+    $("#stateDropDown").change(() => {
+        let stateCode = $("#stateDropDown").val();
+        $.ajax({
+            url: "http://helixexample.local/api/sitecore/NexaWeb/GetAllCitiesByStateName?stateCode=" + stateCode,
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                if (data.length > 0) {
+                    $('#cityDropDown').html('');
+                    let option = '';
+                    option += `<option value='Select'>Select</option>`;
+                    for (let i = 0; i < data.length; i++) {
+                        option += `<option value='${data[i].cityCode}'>${data[i].cityName}</option>`;
+                    }
+                    $('#cityDropDown').html(option);
+
+                }
+            },
+            error: function (error) {
+                alert(error);
+                console.log(error);
+            }
+        });
+    });
+    //GetCarVariant ajax call
+    $("#carModelDropDown").change(() => {
+        let ModeCode = $("#carModelDropDown").val();
+        $.ajax({
+            url: "http://helixexample.local/api/sitecore/NexaWeb/GetCarVariant?ModelCode=" + ModeCode,
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                if (data.length > 0) {
+                    $('#carVariantDropDown').html('');
+                    let option = '';
+                    option += `<option value='Select'>Select</option>`;
+                    for (let i = 0; i < data.length; i++) {
+                        option += `<option value='${data[i].VarientCode}'>${data[i].VarientName}</option>`;
+                    }
+                    $('#carVariantDropDown').html(option);
+
+                }
+            },
+            error: function (error) {
+                alert(error);
+                console.log(error);
+            }
+        });
+    })
+    //GetCarVariantColor call
+    $("#carVariantDropDown").change(() => {
+        let VariantCode = $("#carVariantDropDown").val();
+        $.ajax({
+            url: "http://helixexample.local/api/sitecore/NexaWeb/GetCarVariantColor?VariantCode=" + VariantCode,
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                if (data.length > 0) {
+                    $('#carColorDropDown').html('');
+                    let option = '';
+                    option += `<option value='Select'>Select</option>`;
+
+                    for (let i = 0; i < data.length; i++) {
+                        option += `<option value='${data[i].colorCode}'>${data[i].colorName}</option>`;
+                    }
+                    $('#carColorDropDown').html(option);
+
+                }
+            },
+            error: function (error) {
+                alert(error);
+                console.log(error);
+            }
+        });
+    })
+</script>

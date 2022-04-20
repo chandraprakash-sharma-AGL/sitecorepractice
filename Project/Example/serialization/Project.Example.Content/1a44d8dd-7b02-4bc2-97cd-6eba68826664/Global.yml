@@ -1,0 +1,21 @@
+﻿---
+ID: "db50015b-36e6-463a-a9d2-d3790f6f61be"
+Parent: "1a44d8dd-7b02-4bc2-97cd-6eba68826664"
+Template: "c2420641-cf8b-4197-8283-15734c4aea6c"
+Path: /sitecore/content/Website1/Website1/Global
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: network/16x16/earth.png
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20220315T092847Z

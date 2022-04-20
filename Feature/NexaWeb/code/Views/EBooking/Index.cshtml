@@ -1,0 +1,114 @@
+﻿@using Glass.Mapper.Sc.Web.Mvc
+@using Sitecore.Feature.NexaWeb.Models
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+<div class="container">
+    <h1>E-Booking</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="#" id="CarModelImage" alt="Car Model Image" />
+            <h3 class="ModelName"></h3>
+        </div>
+        <div class="col-lg-6">
+            <label for="carModelDropDown">Select Model:</label>
+            @Html.DropDownList("carModelsDropDown1",
+                                new SelectList(ViewBag.AllModelDetails, "id", "car_model", 
+                                new { @id="msil_code" }), "Select Car Model",
+                                new { @class = "form-control"})
+            <br />
+            <select id="carModelDropDown" class="form-control">
+                <option value="Select">Select Model</option>
+                @foreach (var item in ViewBag.AllModelDetails)
+                {
+                    <option value="@item.msil_code" 
+                            id="@item.id" 
+                            carmodelimage="@item.car_model_image">
+                        @item.car_model
+                    </option>
+                }
+            </select>
+            <label for="carVariantDropDown">Select You Variant</label>
+            <select id="carVariantDropDown" class="form-control">
+                <option value="Select">Select Model Variant</option>
+            </select>
+            <label for="carColorDropDown">Select You Color</label>
+            <select id="carColorDropDown" class="form-control">
+                <option value="Select">Select Color</option>
+            </select>
+            <label for="stateDropDown">Select State:</label>
+            @Html.DropDownList("AllStates",new SelectList(ViewBag.AllStates, "id", "state"), "Select State",new { @class = "form-control"})
+            <label for="cityDropDown">City</label>
+            <select id="cityDropDown" class="form-control">
+                <option value="Select">Select City</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(() => {
+        $("#carModelDropDown").change(() => {
+            var src = $("#carModelDropDown option:selected").attr("carmodelimage");
+            $("#CarModelImage").attr("src", src);
+
+            var carName = $("#carModelDropDown option:selected").html();
+            $(".ModelName").html(carName);
+           
+            var car_model_id = $("#carModelDropDown option:selected").attr("id");
+
+            $.ajax({
+                url: "http://helixexample.local/api/sitecore/EBooking/CarModelVariant?car_model_id=" + car_model_id,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    if (data.length > 0) {
+                        var data = JSON.parse(data);
+                        console.log(data);
+                        $('#carVariantDropDown').html('');
+                        $('#carVariantDropDown').append("<option>Select Variant</option>");
+                        for (let i = 0; i < data.car_variant_list.length; i++) {
+                            $('#carVariantDropDown').append(`
+                                         <option value="${data.car_variant_list[i].car_variant}" 
+                                                 id ="${data.car_variant_list[i].id}"
+                                                 code="${data.car_variant_list[i].msil_code}">
+                                            ${data.car_variant_list[i].car_variant}
+                                         </option>`);
+                        }
+                      
+                    }
+                },
+                error: function (error) { alert(error); console.log(error); }
+            });
+
+        });
+        $("#AllStates").change(() => {
+            let state_code = $("#AllStates option:selected").attr("value");
+            $.ajax({
+                url: "http://helixexample.local/api/sitecore/EBooking/GetCitiesByStateCode?state_code=" + state_code,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    if (data.length > 0) {
+                        var data = JSON.parse(data);
+                        console.log(data);
+                        $('#cityDropDown').html('');
+                        $('#cityDropDown').append("<option>Select City</option>");
+                        for (let i = 0; i < data.city_list.length; i++) {
+                            $('#cityDropDown').append(`
+                                         <option value="${data.city_list[i].msil_code}" 
+                                                 id ="${data.city_list[i].id}"
+                                                 code="${data.city_list[i].msil_code}">
+                                            ${data.city_list[i].city}
+                                         </option>`);
+                        }
+                        
+                    }
+                },
+                error: function (error) { alert(error); console.log(error); }
+            });
+
+        });
+    });
+
+</script>
+

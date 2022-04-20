@@ -1,0 +1,46 @@
+﻿---
+ID: "deed4499-4f14-4ea5-80ef-32b5c34fc4fb"
+Parent: "3b28e350-385a-40b4-a9c6-57454d9f81ce"
+Template: "250b8620-3da4-44d7-9955-091c92554e48"
+Path: /sitecore/content/AllSites/NexaWeb/Data/NexaWebCarModel/Ciaz
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: apps/32x32/car.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0bf69ed9-68c9-4a64-a67c-8d208e423106"
+      Hint: CarModelName
+      Value: Ciaz
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211223T081250Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "60f130c6-411b-49dc-bfeb-f957fb1a8bae"
+      Hint: BookingAmount
+      Value: 11000
+    - ID: "9c64877f-98af-4964-99b5-3345f7dab81b"
+      Hint: CarVariantList
+      Type: Treelist
+      Value: |
+        {D54E5E5B-985E-469D-912A-8151BC2292BD}
+        {4C51DAE6-F928-4206-9C35-FC4226808652}
+        {3B335D74-BCB8-496E-BA7F-7E3F328FCD96}
+    - ID: "b62eac05-b6f3-4817-a48b-5365b9823a81"
+      Hint: CarImage
+      Value: |
+        <image mediaid="{DFB56DA0-8E05-40A3-B0CD-325739F41B56}" />
+    - ID: "b8e5c93a-8ebb-4aa8-a873-41b5df5fb37c"
+      Hint: CarLogoImage
+      Value: |
+        <image mediaid="{6470D39A-3794-4DEB-971D-0F38CD5C8144}" />
+    - ID: "bc064229-5c45-4147-b541-910f5aa6a4a4"
+      Hint: CarModelCode
+      Value: CI

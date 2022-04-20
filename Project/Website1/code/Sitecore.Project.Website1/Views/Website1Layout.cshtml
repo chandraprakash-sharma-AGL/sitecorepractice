@@ -1,0 +1,17 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Website1Layout</title>
+</head>
+<body>
+    <div>
+        <h1>Website1 Layout</h1>
+        @*@Html.Sitecore().ViewRendering("/Views/PageHeader.cshtml")*@
+        @Html.Sitecore().Placeholder("main")
+    </div>
+</body>
+</html>

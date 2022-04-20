@@ -1,0 +1,24 @@
+﻿---
+ID: "84c70193-3cec-478b-8d21-1a9dc82cd052"
+Parent: "71a597c2-5db0-4b9a-acf0-0aa92fc1374d"
+Template: "b4914845-ae74-4689-a0b1-062283b374e8"
+Path: /sitecore/content/AllSites/NexaWeb/Data/NexaWeb Car Variant/Ignis Variant/IGNIS Petrol AMT Alpha
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211223T104252Z
+    - ID: "3efcbbb1-7a35-4772-b7b4-fee3654dcd0c"
+      Hint: CarVariantName
+      Value: IGNIS Petrol AMT Alpha
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "9e820e40-e3ed-4c47-aadd-3e05fe2832ef"
+      Hint: CarVariantCode
+      Value: IGA4BZ200

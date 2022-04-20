@@ -1,0 +1,42 @@
+﻿
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+
+
+<h1>Employees List</h1>
+<input id="btn" type="button" class="btn btn-primary" value="Get All Employee" />
+<input id="btnClear" type="button" class="btn btn-danger" value="Clear" />
+<table  class="table table-bordered">
+    <thead>
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+        </tr>
+    </thead>
+    <tbody id="ulEmployee">
+        
+    </tbody>
+</table>
+<script>
+        $(document).ready(function () {
+            var ulEmployee = $('#ulEmployee');
+            $('#btn').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://helixexample.local/api/sitecore/EmployeeApi/Get',
+                    dataType: 'json',
+                    success: function (data) {
+                        ulEmployee.empty();
+                        $.each(data, function (index,val) {
+                            var fullName = `<td>${val.FirstName}</td><td> ${val.LastName}</td>`;
+                            ulEmployee.append(`<tr>${fullName}</tr>`)
+                        });
+                    }
+                });
+            })
+            $("#btnClear").click(function () {
+                ulEmployee.empty();
+            });
+        });
+</script>
+

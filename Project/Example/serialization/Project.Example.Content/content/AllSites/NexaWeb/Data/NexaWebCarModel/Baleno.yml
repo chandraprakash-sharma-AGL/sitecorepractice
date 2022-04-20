@@ -1,0 +1,46 @@
+﻿---
+ID: "50138942-e5e0-4fa4-b074-b0420c2620a1"
+Parent: "3b28e350-385a-40b4-a9c6-57454d9f81ce"
+Template: "250b8620-3da4-44d7-9955-091c92554e48"
+Path: /sitecore/content/AllSites/NexaWeb/Data/NexaWebCarModel/Baleno
+DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Apps/32x32/Car.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0bf69ed9-68c9-4a64-a67c-8d208e423106"
+      Hint: CarModelName
+      Value: Baleno
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211223T081208Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "60f130c6-411b-49dc-bfeb-f957fb1a8bae"
+      Hint: BookingAmount
+      Value: 11000
+    - ID: "9c64877f-98af-4964-99b5-3345f7dab81b"
+      Hint: CarVariantList
+      Type: Treelist
+      Value: |
+        {2D5A9FAB-052F-4CD1-8F09-976EBE940BEA}
+        {14DE8C9B-770D-45BC-8736-049050D2D356}
+        {C7F7A657-4714-49CE-A0C8-9C1A1259014D}
+    - ID: "b62eac05-b6f3-4817-a48b-5365b9823a81"
+      Hint: CarImage
+      Value: |
+        <image mediaid="{D1E2FC33-4014-4F58-849B-F4E4B34075CE}" />
+    - ID: "b8e5c93a-8ebb-4aa8-a873-41b5df5fb37c"
+      Hint: CarLogoImage
+      Value: |
+        <image mediaid="{721510EA-BF40-4DCF-9A9C-8BA0FA1E1609}" />
+    - ID: "bc064229-5c45-4147-b541-910f5aa6a4a4"
+      Hint: CarModelCode
+      Value: BY
