@@ -2,13 +2,13 @@
 @model Sitecore.ExperienceForms.Mvc.Models.Fields.DropDownListViewModel
 
 <label for="@Html.IdFor(m => Model.Value)" class="@Model.LabelCssClass">
-	@Html.DisplayTextFor(t => Model.Title)
+    @Html.DisplayTextFor(t => Model.Title)
 </label>
-<select id="@Html.IdFor(m => Model.Value)" 
-		name="@Html.NameFor(m => Model.Value)" 
-		class="@Model.CssClass" 
-		data-sc-tracking="@Model.IsTrackingEnabled" 
-		data-sc-field-name="@Model.Name" @Html.GenerateUnobtrusiveValidationAttributes(m => m.Value)>
+<select id="@Html.IdFor(m => Model.Value) carModel"
+        name="@Html.NameFor(m => Model.Value)"
+        class="@Model.CssClass carModel"
+        data-sc-tracking="@Model.IsTrackingEnabled"
+        data-sc-field-name="@Model.Name" @Html.GenerateUnobtrusiveValidationAttributes(m => m.Value)>
     @if (Model.ShowEmptyItem)
     {
         <option label=" "></option>
@@ -17,4 +17,41 @@
         <option value="@item.Value" selected="@item.Selected">@item.Text</option>
     }
 </select>
+
+<div class="row">
+    <div class="col-lg-6">
+        <label for="carVariantDropDown">Select You Variant</label>
+        <select id="carVariantDropDown" class="form-control">
+            <option value="Select">Select</option>
+        </select>
+    </div>
+</div>
+
 @Html.ValidationMessageFor(m => Model.Value)
+
+<script>
+    $(document).ready(function () {
+        $(".carModel").change(() => {
+        let ModelCode = $(".carModel").val();
+        $.ajax({
+            url: "https://helixexample.local/api/sitecore/NexaApi/GetCarVariant?ModelCode=" + ModelCode,
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                if (data.length > 0) {
+                    $('#carVariantDropDown').html('');
+                    let option = '';
+                    option += `<option value='Select'>Select</option>`;
+                    for (let i = 0; i < data.length; i++) {
+                        option += `<option value='${data[i].VarientCode}'>${data[i].VarientName}</option>`;
+                    }
+                    $('#carVariantDropDown').html(option);
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+        })
+    });
+</script>

@@ -140,6 +140,20 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\API\code\Sitecore.Foundation.API.csproj">
+      <Project>{e9bb3008-c450-4e52-964c-046c9014b615}</Project>
+      <Name>Sitecore.Foundation.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\EmployeeDataAccess\EmployeeDataAccess.csproj">
+      <Project>{e51c4f36-874b-4c11-8a19-dd64a70419c2}</Project>
+      <Name>EmployeeDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\NexaDataAccess\NexaDataAccess.csproj">
+      <Project>{72fc4598-3260-4d4f-b9a0-089379b4394e}</Project>
+      <Name>NexaDataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
